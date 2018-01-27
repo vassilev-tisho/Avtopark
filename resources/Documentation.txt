@@ -1,0 +1,72 @@
+Създаваме си базата и правим настройките в .env
+Сега ще опитам да създам всички таблици, да добавя полета в тях, и да направя миграция...
+
+Първата таблица е с ролите :
+php artisan make:migration create_roles_table --create=roles
+
+Oтиваме във файла с миграциите и добавяме полетата :
+ public function up()
+    {
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('slug', 32);
+            $table->string('name', 255);
+            $table->text('permissions');
+            $table->timestamps();
+        });
+    }
+
+Продължаваме с таблиците :
+php artisan make:migration create_employees_table --create=employees
+
+Източници :
+    за ценообразуване -
+    https://www.kamioni.bg/bg/menu/10/post/650/KAK-cENOOBRAZUVAT-PREVOZVAChITE?page=
+
+    за цени на прегледи и граждански отговорности -
+    http://iandgbrokers.com/calculator-grajdanska/compare/%D0%B3%D1%80%D0%B0
+
+    за норми при шофиране-
+    https://ec.europa.eu/transport/road_safety/users/professional-drivers_bg
+
+                ===========================
+                ||    Т Е С Т В А Н Е   |||
+                ===========================
+  //////////////////////////////////////////////
+2. Проблемите с datetimepicker, форматирането на датите
+
+3. На втората страница от потребителите не работят линковете за edit и delete :
+
+Старият скрипт:
+$(document).ready(function () {
+		$('.remove').on('click', function () {
+			if (confirm('Сигурни ли сте?')) {
+				var userId = $(this).data('user');
+				window.location = "/admin/delete-user/" + userId;
+			}
+		});
+
+		$('.edit').on('click', function () {
+			var userId = $(this).data('user');
+			window.location = "/admin/edit-user/" + userId;
+		});
+
+	});
+
+	Новият скрипт:
+	<script>
+    	$(document).ready(function () {
+
+            $('#datatables').on('click', '.remove', function () {
+                if (confirm('Сигурни ли сте?')) {
+                    var id = $(this).data('user');
+                    window.location = "/admin/delete-user/" + id;
+                }
+            });
+
+            $('#datatables').on('click', '.edit', function () {
+                var id = $(this).data('user');
+                window.location = "/admin/edit-user/" + id;
+            });
+        });
+    </script>

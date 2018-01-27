@@ -1,0 +1,67 @@
+
+.profile-img{
+    max-width: 75px;
+    max-height: 85px;
+    border: 5px solid #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+.danger{
+	display: block;
+    background-color: #f44336;
+    border-radius: 10px;
+    color: white;
+    padding: 0px 10px;
+}
+.sidebar .logo{
+	text-align:center;
+}
+.form-group{
+	margin-top: 27px;
+	padding-bottom: 7px;
+}
+.form-group .form-control{
+	margin-bottom: 5px;
+}
+.btn-group, .btn-group-vertical{
+	margin-bottom: 0px;
+	margin-top: 20px;
+}
+.mt5{
+    margin-top: 5px;
+}
+
+.red{
+    background: #FF5F51;
+    color:#fff;
+    padding: 4px;
+    margin-left: 15px;
+    float: left;
+}
+.green{
+    background: #2DBF1F;
+    color:#fff;
+    padding: 7px;
+    margin-left: 15px;
+    float: left;
+}
+
+.purple{
+    background: #CC1FC0;
+    color:#fff;
+    padding: 4px;
+    margin-left: 15px;
+    float: left;
+}
+
+.yellow{
+    background: #E35E04;
+    color:#fff;
+    padding: 4px;
+    margin-left: 15px;
+    float: left;
+}
+.hiddenfield{
+    display:none;
+}
+
