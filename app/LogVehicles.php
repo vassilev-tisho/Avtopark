@@ -11,6 +11,7 @@ class LogVehicles extends Model
 
     public function vehicles()
     {
+		//
         return $this->hasMany('App\Vehicles', 'id', 'vehicle_id');
     }
 
